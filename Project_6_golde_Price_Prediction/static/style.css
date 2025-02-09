@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #1a237e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #283593;
+}
+
+.error {
+    color: #d32f2f;
+    background-color: #ffebee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.result-box {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.prediction {
+    font-size: 2.5rem;
+    color: #1a237e;
+    margin: 1rem 0;
+}
+
+.accuracy {
+    font-size: 1.5rem;
+    color: #388e3c;
+    margin: 1rem 0;
+}
+
+.back-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #1a237e;
+    margin-top: 2rem;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
