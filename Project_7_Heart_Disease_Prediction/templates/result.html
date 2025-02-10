@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tahmin Sonucu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Tahmin Sonucu:</h2>
+        <div class="result">
+            <h3>{{ prediction_text }}</h3>
+        </div>
+        <a href="{{ url_for('home') }}" class="back-button">Yeni Tahmin</a>
+    </div>
+</body>
+</html> 

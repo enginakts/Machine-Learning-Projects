@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalp Hastalığı Tahmin Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalp Hastalığı Tahmin Sistemi</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+                <label>Yaş:</label>
+                <input type="number" name="age" required>
+            </div>
+            <div class="form-group">
+                <label>Cinsiyet (1: Erkek, 0: Kadın):</label>
+                <input type="number" name="sex" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Göğüs Ağrısı Tipi (0-3):</label>
+                <input type="number" name="cp" min="0" max="3" required>
+            </div>
+            <div class="form-group">
+                <label>Dinlenme Kan Basıncı:</label>
+                <input type="number" name="trestbps" required>
+            </div>
+            <div class="form-group">
+                <label>Kolesterol:</label>
+                <input type="number" name="chol" required>
+            </div>
+            <div class="form-group">
+                <label>Açlık Kan Şekeri (1: >120, 0: <120):</label>
+                <input type="number" name="fbs" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>EKG Sonuçları (0-2):</label>
+                <input type="number" name="restecg" min="0" max="2" required>
+            </div>
+            <div class="form-group">
+                <label>Maksimum Kalp Hızı:</label>
+                <input type="number" name="thalach" required>
+            </div>
+            <div class="form-group">
+                <label>Egzersizle İndüklenen Anjin (1: Evet, 0: Hayır):</label>
+                <input type="number" name="exang" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>ST Depresyonu:</label>
+                <input type="number" name="oldpeak" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label>ST Eğiminin Tepe Noktası (0-2):</label>
+                <input type="number" name="slope" min="0" max="2" required>
+            </div>
+            <div class="form-group">
+                <label>Büyük Damarların Sayısı (0-3):</label>
+                <input type="number" name="ca" min="0" max="3" required>
+            </div>
+            <div class="form-group">
+                <label>Thal (0-3):</label>
+                <input type="number" name="thal" min="0" max="3" required>
+            </div>
+            <button type="submit">Tahmin Et</button>
+        </form>
+    </div>
+</body>
+</html> 
