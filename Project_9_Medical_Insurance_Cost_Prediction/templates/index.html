@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sağlık Sigortası Maliyet Tahmini</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sağlık Sigortası Maliyet Tahmini</h1>
+    
+    <form method="POST">
+        <div class="form-group">
+            <label>Yaş:</label>
+            <input type="number" name="age" required min="0" max="100">
+        </div>
+
+        <div class="form-group">
+            <label>Cinsiyet:</label>
+            <select name="sex" required>
+                <option value="male">Erkek</option>
+                <option value="female">Kadın</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>BMI:</label>
+            <input type="number" name="bmi" required step="0.1" min="10" max="60">
+        </div>
+
+        <div class="form-group">
+            <label>Çocuk Sayısı:</label>
+            <input type="number" name="children" required min="0" max="10">
+        </div>
+
+        <div class="form-group">
+            <label>Sigara Kullanımı:</label>
+            <select name="smoker" required>
+                <option value="no">Hayır</option>
+                <option value="yes">Evet</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Bölge:</label>
+            <select name="region" required>
+                <option value="southeast">Güneydoğu</option>
+                <option value="southwest">Güneybatı</option>
+                <option value="northeast">Kuzeydoğu</option>
+                <option value="northwest">Kuzeybatı</option>
+            </select>
+        </div>
+
+        <button type="submit">Tahmin Et</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        <h2>Tahmin Sonucu</h2>
+        <p>Tahmini Sağlık Sigortası Maliyeti: ${{ prediction }}</p>
+        <p>Model Doğruluk Oranı (R² Score): {{ "%.2f"|format(r2_score) }}</p>
+    </div>
+    {% endif %}
+</body>
+</html> 
