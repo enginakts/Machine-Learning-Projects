@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Big Mart Sales Predictor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Big Mart Sales Predictor</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label>Item Identifier:</label>
+                <input type="number" name="item_identifier" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Item Weight:</label>
+                <input type="number" step="0.01" name="item_weight" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Item Fat Content (0 for Low Fat, 1 for Regular):</label>
+                <input type="number" min="0" max="1" name="item_fat_content" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Item Visibility:</label>
+                <input type="number" step="0.0001" name="item_visibility" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Item Type:</label>
+                <input type="number" min="0" max="15" name="item_type" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Item MRP:</label>
+                <input type="number" step="0.01" name="item_mrp" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Outlet Identifier:</label>
+                <input type="number" name="outlet_identifier" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Outlet Establishment Year:</label>
+                <input type="number" min="1900" max="2023" name="outlet_establishment_year" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Outlet Size (0-Small, 1-Medium, 2-High):</label>
+                <input type="number" min="0" max="2" name="outlet_size" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Outlet Location Type:</label>
+                <input type="number" min="0" max="2" name="outlet_location_type" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Outlet Type:</label>
+                <input type="number" min="0" max="3" name="outlet_type" required>
+            </div>
+            
+            <button type="submit">Predict Sales</button>
+        </form>
+    </div>
+</body>
+</html> 
