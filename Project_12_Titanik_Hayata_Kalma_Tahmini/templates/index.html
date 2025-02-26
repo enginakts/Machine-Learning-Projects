@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Titanic Hayatta Kalma Tahmini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Titanic Hayatta Kalma Tahmini</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label for="pclass">Yolcu Sınıfı:</label>
+                <select name="pclass" required>
+                    <option value="1">1. Sınıf</option>
+                    <option value="2">2. Sınıf</option>
+                    <option value="3">3. Sınıf</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sex">Cinsiyet:</label>
+                <select name="sex" required>
+                    <option value="0">Erkek</option>
+                    <option value="1">Kadın</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Yaş:</label>
+                <input type="number" name="age" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sibsp">Kardeş/Eş Sayısı:</label>
+                <input type="number" name="sibsp" required>
+            </div>
+
+            <div class="form-group">
+                <label for="parch">Ebeveyn/Çocuk Sayısı:</label>
+                <input type="number" name="parch" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fare">Bilet Ücreti:</label>
+                <input type="number" name="fare" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="embarked">Biniş Limanı:</label>
+                <select name="embarked" required>
+                    <option value="0">Southampton (S)</option>
+                    <option value="1">Cherbourg (C)</option>
+                    <option value="2">Queenstown (Q)</option>
+                </select>
+            </div>
+
+            <button type="submit">Tahmin Et</button>
+        </form>
+    </div>
+</body>
+
+</html>

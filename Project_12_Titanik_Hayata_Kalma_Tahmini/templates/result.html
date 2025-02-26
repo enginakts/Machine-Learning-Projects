@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tahmin Sonucu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container result-container">
+        <h1>Tahmin Sonucu</h1>
+        <div class="result-box">
+            <h2>{{ prediction }}</h2>
+            <p>Hayatta kalma olasılığı: <span class="probability">%{{ probability }}</span></p>
+        </div>
+        <a href="{{ url_for('home') }}" class="back-button">Yeni Tahmin</a>
+    </div>
+</body>
+
+</html>
