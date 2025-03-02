@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalori Yakma Tahmini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kalori Yakma Tahmini</h1>
+
+        <form method="POST">
+            <div class="form-group">
+                <label for="gender">Cinsiyet:</label>
+                <select name="gender" id="gender" required>
+                    <option value="0">Erkek</option>
+                    <option value="1">Kadın</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Yaş:</label>
+                <input type="number" name="age" id="age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="height">Boy (cm):</label>
+                <input type="number" step="0.1" name="height" id="height" required>
+            </div>
+
+            <div class="form-group">
+                <label for="weight">Kilo (kg):</label>
+                <input type="number" step="0.1" name="weight" id="weight" required>
+            </div>
+
+            <div class="form-group">
+                <label for="duration">Egzersiz Süresi (dakika):</label>
+                <input type="number" step="0.1" name="duration" id="duration" required>
+            </div>
+
+            <div class="form-group">
+                <label for="heart_rate">Kalp Atış Hızı:</label>
+                <input type="number" step="0.1" name="heart_rate" id="heart_rate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="body_temp">Vücut Sıcaklığı (°C):</label>
+                <input type="number" step="0.1" name="body_temp" id="body_temp" required>
+            </div>
+
+            <button type="submit">Tahmin Et</button>
+        </form>
+
+        {% if prediction is not none %}
+        <div class="result">
+            <h2>Tahmin Sonucu:</h2>
+            <p>Yakılan tahmini kalori: <span class="prediction">{{ prediction }}</span> kcal</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
