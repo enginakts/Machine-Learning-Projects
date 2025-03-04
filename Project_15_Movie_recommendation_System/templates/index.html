@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Film Öneri Sistemi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Film Öneri Sistemi</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label>Film anahtar kelimelerini girin (örn: action spy thriller):</label>
+                <input type="text" name="keywords" required>
+            </div>
+            <button type="submit">Film Öner</button>
+        </form>
+    </div>
+</body>
+</html> 
