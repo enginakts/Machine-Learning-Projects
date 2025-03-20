@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Müzik Popülerlik Tahmini</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Müzik Popülerlik Tahmini</h1>
+            <p>Müziğinizin özelliklerini girin ve popülerlik skorunu tahmin edin</p>
+        </header>
+
+        <main>
+            <form id="predictionForm" class="prediction-form">
+                <div class="form-group">
+                    <label for="danceability">Dans Edilebilirlik (0-1)</label>
+                    <input type="range" id="danceability" name="danceability" min="0" max="1" step="0.01" value="0.5">
+                    <span class="value-display">0.5</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="energy">Enerji (0-1)</label>
+                    <input type="range" id="energy" name="energy" min="0" max="1" step="0.01" value="0.5">
+                    <span class="value-display">0.5</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="valence">Duygusal Pozitiflik (0-1)</label>
+                    <input type="range" id="valence" name="valence" min="0" max="1" step="0.01" value="0.5">
+                    <span class="value-display">0.5</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="acousticness">Akustiklik (0-1)</label>
+                    <input type="range" id="acousticness" name="acousticness" min="0" max="1" step="0.01" value="0.5">
+                    <span class="value-display">0.5</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="tempo">Tempo (50-200 BPM)</label>
+                    <input type="range" id="tempo" name="tempo" min="50" max="200" step="1" value="120">
+                    <span class="value-display">120</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="speechiness">Konuşma İçeriği (0-1)</label>
+                    <input type="range" id="speechiness" name="speechiness" min="0" max="1" step="0.01" value="0.5">
+                    <span class="value-display">0.5</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="liveness">Canlılık (0-1)</label>
+                    <input type="range" id="liveness" name="liveness" min="0" max="1" step="0.01" value="0.5">
+                    <span class="value-display">0.5</span>
+                </div>
+
+                <button type="submit" class="predict-button">Popülerlik Tahmin Et</button>
+            </form>
+
+            <div id="result" class="result-container hidden">
+                <h2>Tahmin Sonucu</h2>
+                <div class="prediction-score">
+                    <span id="predictionValue">--</span>
+                    <span class="max-score">/100</span>
+                </div>
+                <div class="prediction-message" id="predictionMessage"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
